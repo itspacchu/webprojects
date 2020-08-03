@@ -1,4 +1,3 @@
 # Processing Boids Simulation 🦅
- Boids Flocking in Javascript script
 
-Just trying to remake boids simulation I did in unity for more web oriented approach 😉
+Learning javascript p5.js from TheNatureOfCode and Coding Train ✋
