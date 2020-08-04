@@ -1,7 +1,7 @@
 const flock = [];
 
 function setup() {
-    createCanvas(1280,720);
+    createCanvas(720,400);
     var boid_count = 200;
     for(let i=0;i<boid_count;i++){
         flock.push(new Boid());
