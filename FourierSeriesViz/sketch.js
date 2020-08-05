@@ -2,28 +2,35 @@ function setup() {
   
     createCanvas(720, 400);
     
-    cSlider = createSlider(1,10,10);
-    cSlider.position(20,20);
+    cSlider = createSlider(3,15,10,2);
+    cSlider.position(20,380);
+    time = 0;
   }
   
   function draw() {
     const sinecomps = cSlider.value()+1;
     background(42);
     fill(255);
-    text('no of Sine '+ str(sinecomps-1), cSlider.x * 2 + cSlider.width, 35);
+    textSize(25);
+    text('no of Sines '+ str(sinecomps-3), cSlider.x * 2 + cSlider.width, cSlider.y +5);
     sinusoids(sinecomps);
+    time+=1;
   
   }
   
   function sinusoids(sinecomps){
     noStroke();
     fill(70);
-    for(let i = 50 ; i < 670 ; i+=0.1){
-        ellipse(i,200+30*sinedSquareWave(i/100),2);
+    for(let i = 50 ; i < 670 ; i+=2){
+        ellipse(i,200+30*sinedSquareWave((i+time)/100),2);
     }
     fill(255);
-    for(let i = 50 ; i < 670 ; i+=0.1){
-        ellipse(i,200+30*noOfSines(i/100,sinecomps),5);
+    for(let i = 50 ; i < 670 ; i+=1){
+      for(let ss = 2; ss < sinecomps ; ss+=2){
+        fill(map(ss,0,sinecomps,50,255));
+        ellipse(i,200+30*(4/PI)*noOfSines((i+time)/100,ss) - (sinecomps - ss)*50 + 100 ,5);
+      }
+        
     }
   }
   

@@ -53,7 +53,7 @@ class Boid {
     show(){
         strokeWeight(5);
         stroke(255);
-        this.boidshape(this.position.x,this.position.y,this.position.angle);
+        point(this.position.x,this.position.y);
     }
     
     boidshape(x,y,angle){
