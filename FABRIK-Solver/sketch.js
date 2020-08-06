@@ -58,11 +58,13 @@ function draw(){
     f5  = lmouseX*(l1 + l2*cos(a2));
     f6 = lmouseY*(l2*sin(a2));
     
-    a2 = acos(f1 - f2)/2*l1*l2;
+    //a2 = acos(f1 - f2)/2*l1*l2;
     // why tf it aint working
     //θ1=atan2(y(d1+d2cosθ2)−x(d2sinθ2),x(d1+d2cosθ2)+y(d2sinθ2))
-    a1 = atan(lmouseY * (f3 - f4) / (f5 + f6) );
-    console.log(a1,a2);
+   // a1 = atan(lmouseY * (f3 - f4) / (f5 + f6) );
+   a1+=0.01;
+   a2-=0.01;
+   //placeholder animation
 
 
 }
