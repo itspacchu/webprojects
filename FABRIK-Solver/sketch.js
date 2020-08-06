@@ -11,12 +11,13 @@ function setup(){
     
 }
 function draw(){
+    background(42);
     lmouseX = mouseX-width/2;
     lmouseY = mouseY-100;
     translate(width/2, 100);
-    background(42);
+    
     for(let i = 1;i < tc.length;i++){
-        stroke(120,120,120,map(i,1,tc.length,100,0));
+        stroke(120,120,120);
         strokeWeight(3);
         line(tc[i].x,tc[i].y,tc[i-1].x,tc[i-1].y);
     }
@@ -40,32 +41,33 @@ function draw(){
     line(0,0,elbow.x,elbow.y);
     stroke(255);
     line(elbow.x,elbow.y,tip.x,tip.y);
+    //debug
+    ellipse(elbow.x,elbow.y,20);
+    //
     dottedline(0,0,lmouseX,lmouseY,1);
     noStroke();
     ellipse(lmouseX,lmouseY,5);
 
-    
-    tc.unshift(tip);
-    if(tc.length > 200){
-        tc.pop();
-    }
-
-    //from http://www.ryanjuckett.com/programming/analytic-two-bone-ik-in-2d/
-    f1 = lmouseX*lmouseX + lmouseY*lmouseY;
-    f2 =l1*l1 + l2*l2;
-    f3 = (l1 + l2*cos(a2));
-    f4 = lmouseX*l2*sin(a2);
-    f5  = lmouseX*(l1 + l2*cos(a2));
-    f6 = lmouseY*(l2*sin(a2));
-    
     //a2 = acos(f1 - f2)/2*l1*l2;
     // why tf it aint working
     //θ1=atan2(y(d1+d2cosθ2)−x(d2sinθ2),x(d1+d2cosθ2)+y(d2sinθ2))
-   // a1 = atan(lmouseY * (f3 - f4) / (f5 + f6) );
-   a1+=0.01;
-   a2-=0.01;
-   //placeholder animation
+    // a1 = atan(lmouseY * (f3 - f4) / (f5 + f6) );
 
+    iter_ln1 = createVector(tip.x,tip.y).sub(createVector(lmouseX,lmouseY)).normalize().setMag(l2);
+    re = createVector(lmouseX + iter_ln1.x,lmouseY + iter_ln1.y);
+    
+    iter_ln2 = createVector(elbow.x,elbow.y).sub(createVector(re.x ,re.y )).normalize().setMag(l2);
+    
+    ellipse(re.x,re.y,10);
+    stroke(255);
+    strokeWeight(5);
+    line(lmouseX,lmouseY,lmouseX + iter_ln1.x,lmouseY + iter_ln1.y);
+    line(lmouseX, lmouseY , lmouseX + iter_ln2.x , lmouseY + iter_ln2.y);
+    tc.unshift(lmouseX,lmouseY);
+
+    if(tc.length > 200){
+        tc.pop();
+    }
 
 }
 
