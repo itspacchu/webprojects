@@ -89,7 +89,7 @@ function draw(){
     image(p, 0, 0);
 
     tck.unshift(j2);
-    console.log(tck);
+    //console.log(tck); OMG SPAM
 
     if(tck.length > 250){
         tck.pop(0);
