@@ -1,34 +1,79 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="index/style.css">
     <title> Some Javascript experimentation </title>
+    <head>
+        <div id="tit">
+            <h1> Some Javascript Projects </h1>
+        </div>
+        
+        <h4> Created by Prashant</h4>
+    </head>
     <body>
-        <h1><b>Some Javascript projects</b></h1>
-        <h3><i>Welcome to 1990s internet without css ;)</i></h3>
-        <h4><i>If website is lagging click on each project to open them seperately</i></h4>
+        <br>
+        <h4>If website is lagging click on each project to open them seperately</h4>
+        <br>
+        
         <div>
-        <h1><a href="DoublePendulum\index.html">Double Pendulum</a>  </i> </h1>
+        <h2><a href="DoublePendulum\index.html">Double Pendulum</a>  </i> </h2>
         <iframe src="DoublePendulum\index.html" width=740 height=740></iframe>
         </div>
+        <br>
         <hr>
+        <br>
 
 
         <div>
-        <h1><a href="FourierSeriesViz/index.html">Fourier Series of Square wave</a>  </h1>
+        <h2><a href="FourierSeriesViz/index.html">Fourier Series of Square wave</a>  </h2>
         <iframe src="FourierSeriesViz/index.html" width=740 height=430></iframe>
         </div>
+        <br>
         <hr>
+        <br>
 
         <div>
-        <h1><a href="BoidsProject/index.html"> BOIDS!!! <i> in progress lol </a></i> </h1>
+            <h2><a href="fourierCirclesRE/index.html">Double Pendulum</a>  </i> </h2>
+            <iframe src="fourierCirclesRE/index.html" width=740 height=740></iframe>
+            </div>
+            <br>
+            <hr>
+            <br>
+
+        <div>
+        <h2><a href="BoidsProject/index.html"> BOIDS!!! <i> in progress lol </a></i> </h2>
         <iframe src="BoidsProject/index.html" width=740 height=430></iframe>
         </div>
+        <br>
         <hr>
+        <br>
         
 
     </body>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <script type="application/javascript">
+
+        function resizeIFrameToFitContent( iFrame ) {
+        
+            iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
+            iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+        }
+        
+        window.addEventListener('DOMContentLoaded', function(e) {
+        
+            var iFrame = document.getElementById( 'iFrame1' );
+            resizeIFrameToFitContent( iFrame );
+        
+            // or, to resize all iframes:
+            var iframes = document.querySelectorAll("iframe");
+            for( var i = 0; i < iframes.length; i++) {
+                resizeIFrameToFitContent( iframes[i] );
+            }
+        } );
+        
+        </script>
+        
+        <iframe src="usagelogs/default.aspx" id="iFrame1"></iframe>
     <footer>
-        <h4>
-            <i>too lazy to design this website ¯\_(ツ)_/¯ </i>
-        </h4>
     </footer>
+    
 </html>

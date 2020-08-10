@@ -1,0 +1,73 @@
+body {
+    display: block;
+    margin-left : auto;
+    margin-right: auto;
+    width: 40%;
+    padding = 0px;
+    background-color: rgb(42,42,42);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size : 45px;
+    color: white;
+    text-shadow: 2px 2px #ff4949;
+}
+
+h2,h3 {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size : 30px;
+    color: snow;
+}
+
+h4,h5,h6 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size : 15px;
+    color: snow;
+}
+
+
+
+a:link, a:visited {
+    background-color: #ff4949;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: #c53535;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  hr {
+    height:2px;
+    border-width:0;
+    width: 100%;
+    color:gray;
+    background-color:gray
+  }
+

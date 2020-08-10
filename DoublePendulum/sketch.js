@@ -5,8 +5,8 @@ function setup(){
     let height = 700;
     p = createGraphics(screen.width,height);
     p.clear();
-    createCanvas(width,height);
-    dcoeff = createSlider(0.9, 1, 100,0.001);
+    let mycanvas = createCanvas(width,height);
+    dcoeff = createSlider(0.9, 1, 0.99,0.001);
     dcoeff.position(10,15);
     gsl = createSlider(-1, 1, 100,0.01);
     gsl.position(10,45);
