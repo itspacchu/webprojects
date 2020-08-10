@@ -6,7 +6,7 @@ function setup() {
   createCanvas(width, height);
   tracer = []
 
-  circlecount = cn.length;
+  circlecount = 6;
 }
 
 function draw() {

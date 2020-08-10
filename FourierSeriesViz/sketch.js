@@ -2,7 +2,7 @@ function setup() {
   
     createCanvas(720, 400);
     
-    cSlider = createSlider(3,15,10,2);
+    cSlider = createSlider(3,15,4,2);
     cSlider.position(20,380);
     time = 0;
   }
