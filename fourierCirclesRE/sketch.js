@@ -1,13 +1,18 @@
-const PI = 3.1415;
+
 
 function setup() {
   width = 800;
   height = 800;
   t = 0
-  
-  sample = [1,1,1,1,1,1];
+  timescaler = 1;
+  scal = 0.1;
+  x = [];
+  for(let i = 0;i< 50;i++){
+    x[i] = new cmpx(1000*sin(i),1000*cos(i));
+  }
+  cn = fourierCalculator(x);
   createCanvas(width, height);
-  cn = fourierCalculator(sample,0.01);
+
   tracer = []
   print(cn);
   circlecount = cn.length;
@@ -21,12 +26,12 @@ function draw() {
   let j = 0;
   let j_old = 0;
 
-  for(let n = 0; n < circlecount;n++){
+  for(let n = 0; n < cn.length;n++){
     i_old = i;
     j_old = j;
-    rad = cn[n].mag();
-    i += rad * cos(n*t + cn[n].ang());
-    j += rad * sin(n*t + cn[n].ang());
+    rad = cn[n].mag * scal;
+    i += rad * cos(cn[n].freq*t + cn[n].ang + HALF_PI);
+    j += rad * sin(cn[n].freq*t + cn[n].ang + HALF_PI);
     stroke(map(n,0,circlecount,50,125));
     strokeWeight(1);
     noFill();
@@ -55,7 +60,7 @@ function draw() {
     line(tracer[n-1].x,tracer[n-1].y,tracer[n].x,tracer[n].y)
   }
   //ticking
-  t+=0.01;
+  t+= TWO_PI * timescaler / cn.length;
 }
 
 
@@ -65,34 +70,46 @@ function EulerValues(rad,ph){
 }
 
 
-function fourierCalculator(arr,dt){
-  // Calculates integral from 0-PI
-  let cn = []
-  let ct = 0;
-  let st = 0;
+function fourierCalculator(x,dt){
+  const fX = [];
+  const N = x.length;
+  for(let k=0;k<N;k++){
+    let sum = new cmpx(0,0);
+    let re = 0;
+    let im = 0;
+    for(let n =0 ;n<N;n++){
+      let phi = TWO_PI * k * n / N;
+      const c = new cmpx(cos(phi) , -sin(phi));
+      sum.add(x[n].mult(c));
 
-  for(let n=0;n<arr.length;n++){
-    for(let i=0;i<PI;i+=dt){
-      ct+= cos(n*2*PI*i)
     }
-    for(let i=0;i<PI;i+=dt){
-      st+= sin(n*2*PI*i)
-    }
-    cn.push(new cmpx(ct/arr.length,st/arr.length));
+
+    sum.re = sum.re / N;
+    sum.im = sum.im / N;
+    
+    let mag = sqrt(sum.re*sum.re + sum.im*sum.im);
+    let ang = atan2(sum.im,sum.re);
+    let freq = k;
+    fX[k] = {re:sum.re , im:sum.im , mag , ang , freq};
+
   }
-  
-  return cn;
+  return fX;
 }
 
-function cmpx(real,imag){
-  this.real = real;
-  this.imag = imag;
-
-  this.mag = function(){
-    return sqrt(this.real*this.real + this.imag*this.imag);
+class cmpx {
+  constructor(a,b){
+    this.re = a;
+    this.im = b;
   }
 
-  this.ang = function(){
-    return atan2(this.imag,this.real);
+  add(c){
+    this.re += c.re;
+    this.im += c.im;
+  }
+
+  mult(c) {
+    const re = this.re * c.re - this.im * c.im;
+    const im = this.re * c.im + this.im * c.re;
+    return new cmpx(re,im);
   }
 }
