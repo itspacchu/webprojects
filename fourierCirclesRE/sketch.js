@@ -15,7 +15,7 @@ function setup() {
   for(let i = 0;i < elemns;i++){
     q = imgjson[i].x;
     p = imgjson[i].y;
-    x[i] = new cmpx(p,-q);
+    x[i] = new cmpx(p,q);
   }
   cn = fourierCalculator(x);
   createCanvas(width, height);
@@ -32,25 +32,25 @@ function draw() {
   let i_old = 0;
   let j = 0;
   let j_old = 0;
-  image(ref, -260, -370);
+  //image(ref, -260, -370);
   background(42,42,42,200);
   strokeWeight(1);
-  for(let n = 1; n < cn.length;n++){
+  for(let n = 1; n < circlecount ;n++){
     i_old = i;
     j_old = j;
     rad = cn[n].mag * scal;
-    i += rad * cos(cn[n].freq*t + cn[n].ang + HALF_PI);
-    j += rad * sin(cn[n].freq*t + cn[n].ang + HALF_PI);
+    i += rad * cos(cn[n].freq* t * timescaler + cn[n].ang + HALF_PI);
+    j += rad * sin(cn[n].freq* t * timescaler + cn[n].ang + HALF_PI);
     stroke(100);
-    strokeWeight(1);
+    strokeWeight(0.5);
     noFill();
     ellipse(i_old,j_old,rad*2);
+    ellipse(i, j, 5);
     iv = createVector(i_old, j_old);
     jv = createVector(i, j)
-    //drawArrow(iv,jv,'white');
     line(iv.x,iv.y,jv.x,jv.y);
     fill(map(n,0,6,50,125));
-    ellipse(i, j, 5);
+    
     
   }
   fill(255);
@@ -70,7 +70,11 @@ function draw() {
     line(tracer[n-1].x,tracer[n-1].y,tracer[n].x,tracer[n].y)
   }
   //ticking
-  t+= TWO_PI * timescaler / cn.length;
+  t+= TWO_PI  / cn.length;
+
+
+
+
 }
 
 
@@ -123,3 +127,4 @@ class cmpx {
     return new cmpx(re,im);
   }
 }
+
