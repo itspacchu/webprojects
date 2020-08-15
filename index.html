@@ -1,106 +1,235 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="index/style.css">
-    <title> Some Javascript experimentation </title>
-    <head>
-        <div id="tit">
-            <h1> Some Javascript Projects </h1>
-        </div>
-        
-        <h4> Created by Prashant</h4>
-    </head>
-    <body>
-        <br>
-        <h4>If website is lagging click on each project to open them seperately</h4>
-        <br>
-        
-        <div>
-        <h2><a href="DoublePendulum\index.html">Double Pendulum</a>  </i> </h2>
-        <iframe src="DoublePendulum\index.html" width=740 height=740></iframe>
-        </div>
-        <br>
-        <hr>
-        <br>
+<head>
+  <!-- Meta tags -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="viewport" content="width=device-width" />
 
+  <!-- Favicon and title -->
+  <link rel="icon" href="path/to/fav.png">
+  <title>Prashant's Projects</title>
 
-        <div>
-        <h2><a href="FourierSeriesViz/index.html">Fourier Series of Square wave</a>  </h2>
-        <iframe src="FourierSeriesViz/index.html" width=740 height=430></iframe>
+  <!-- Halfmoon CSS -->
+  <link href="https://cdn.jsdelivr.net/gh/halfmoonui/halfmoon@1.0.3/css/halfmoon.min.css" rel="stylesheet" />
+</head>
+<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true" data-set-preferred-theme-onload="true">
+  <!-- Modals go here -->
+  <!-- Reference: https://www.gethalfmoon.com/docs/modal -->
+
+  <!-- Page wrapper start -->
+  <div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-all">
+
+    <!-- Sticky alerts (toasts), empty container -->
+    <!-- Reference: https://www.gethalfmoon.com/docs/sticky-alerts-toasts -->
+    <div class="sticky-alerts"></div>
+
+    <!-- Navbar start -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <button id="toggle-sidebar-btn" class="btn btn-action" type="button" onclick="halfmoon.toggleSidebar()">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
-        <br>
-        <hr>
-        <br>
-
-        <div>
-        <h2><a href="fourierCirclesRE/index.html">Fourier Drawing</a></h2>
-        <h4> Trying via EFS </h4>
-        <iframe src="fourierCirclesRE/index.html" width=740 height=740></iframe>
+        <a href="https://itspacchu.live" class="navbar-brand ml-10 ml-sm-20">
+            Prashant Projects
+        </a>
+        <div class="navbar-content ml-auto">
+            <!--<a href="#" class="btn btn-primary" role="button">Get started</a>-->
         </div>
-        <br>
-        <hr>
-        <br>
+    </nav>
+    <!-- Navbar end -->
 
-        <div>
-            <h2><a href="matterjs/collisionthings/index.html"> click physics? </a> </h2>
-            <iframe src="matterjs/collisionthings/index.html" width=740 height=430></iframe>
+    <!-- Sidebar overlay -->
+    <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
+
+    <!-- Sidebar start -->
+    <div class="sidebar">
+        <div class="sidebar-menu">
+            <div class="sidebar-content">
+
             </div>
-            <br>
-            <hr>
-            <br>
-
-        
-
-        <div>
-        <h2><a href="FABRIK-Solver/index.html"> FABRIK Implementation </a> </h2>
-        <iframe src="FABRIK-Solver/index.html" width=740 height=430></iframe>
+            <h5 class="sidebar-title">Prashant's Den</h5>
+            <div class="sidebar-divider"></div>
+            <a href="https://itspacchu.live" class="sidebar-link sidebar-link-with-icon active">
+                <span class="sidebar-icon">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                </span>
+                Home
+            </a>
+            <a href="/index.html" class="sidebar-link sidebar-link-with-icon">
+                <span class="sidebar-icon">
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </span>
+                Projects
+            </a>
+            <br />
+            <h5 class="sidebar-title">Projects</h5>
+            <div class="sidebar-divider"></div>
+            <a href="DoublePendulum/index.html" class="sidebar-link sidebar-link-with-icon">
+                <span class="sidebar-icon">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+                Double Pendulum
+            </a>
+            <a href="FourierSeriesViz/index.html" class="sidebar-link sidebar-link-with-icon">
+                <span class="sidebar-icon">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+                Fourier Series
+            </a>
+            <a href="fourierCirclesRE/index.html" class="sidebar-link sidebar-link-with-icon">
+                <span class="sidebar-icon">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+                Fourier Epicycles
+            </a>
+            <a href="matterjs/collisionthings/index.html" class="sidebar-link sidebar-link-with-icon">
+                <span class="sidebar-icon">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+                matter.js #1
+            </a>
+            <a href="FABRIK-Solver/index.html" class="sidebar-link sidebar-link-with-icon">
+                <span class="sidebar-icon">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+                Inverse Kinematics
+            </a>
         </div>
-        <br>
-        <hr>
-        <br>
+    </div>
+    <!-- Sidebar end -->
 
-        <div>
-        <h2><a href="ChainThingy/index.html"> ChainThingy </a> </h2>
-        <iframe src="ChainThingy/index.html" width=740 height=430></iframe>
+    <!-- Content wrapper start -->
+    <div class="content-wrapper">
+        <!-- Content -->
+
+        <div class="container-fluid">
+            <div class="row">
+            <div class="row">
+              <div class="col-sm">
+                <div class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                    <div class="card p-0"> <!-- p-0 = padding: 0 -->
+                      <img src="DoublePendulum/DoublePendulum.gif" class="img-fluid rounded-top" alt="Animated Preview"> <!-- rounded-top = rounded corners on the top -->
+                      <!-- Nested content container inside card -->
+                      <div class="content">
+                        <h2 class="content-title">
+                          Double Pendulum
+                        </h2>
+                        <p class="text-muted">
+                          Simulation of Double pendulum written in javascript.
+                        </p>
+                        <div class="text-right"> <!-- text-right = text-align: right -->
+                          <a href="https://github.com/itspacchu/Javascript-projects/tree/master/DoublePendulum" class="btn">Source</a>
+                          <a href="DoublePendulum/index.html" class="btn">Preview</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="col-sm">
+                <div class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                    <div class="card p-0"> <!-- p-0 = padding: 0 -->
+                      <img src="FourierSeriesViz/preview.gif" class="img-fluid rounded-top" alt="Animated Preview"> <!-- rounded-top = rounded corners on the top -->
+                      <!-- Nested content container inside card -->
+                      <div class="content">
+                        <h2 class="content-title">
+                          Fourier Series of Square Wave
+                        </h2>
+                        <p class="text-muted">
+                          Fourier series approximation and recontruction of Square wave
+                        </p>
+                        <div class="text-right"> <!-- text-right = text-align: right -->
+                          <a href="https://github.com/itspacchu/Javascript-projects/tree/master/FourierSeriesViz" class="btn">Source</a>
+                          <a href="FourierSeriesViz/index.html" class="btn">Preview</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="col-sm">
+                <div class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                    <div class="card p-0"> <!-- p-0 = padding: 0 -->
+                      <img src="fourierCirclesRE/preview.gif" class="img-fluid rounded-top" alt="Animated Preview"> <!-- rounded-top = rounded corners on the top -->
+                      <!-- Nested content container inside card -->
+                      <div class="content">
+                        <h2 class="content-title">
+                          Epicycle Drawing
+                        </h2>
+                        <p class="text-muted">
+                          Fourier Epicycle drawing of a SVG art
+                        </p>
+                        <div class="text-right"> <!-- text-right = text-align: right -->
+                          <a href="https://github.com/itspacchu/Javascript-projects/tree/master/fourierCirclesRE" class="btn">Source</a>
+                          <a href="fourierCirclesRE/index.html" class="btn">Preview</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+              <div class="row">
+              <div class="col-sm">
+                <div class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                    <div class="card p-0"> <!-- p-0 = padding: 0 -->
+                      <img src="matterjs/collisionthings/preview.gif" class="img-fluid rounded-top" alt="Animated Preview"> <!-- rounded-top = rounded corners on the top -->
+                      <!-- Nested content container inside card -->
+                      <div class="content">
+                        <h2 class="content-title">
+                          Matter.js Collisions
+                        </h2>
+                        <p class="text-muted">
+                          Some physics Box collisions from matter.js
+                        </p>
+                        <div class="text-right"> <!-- text-right = text-align: right -->
+                          <a href="https://github.com/itspacchu/Javascript-projects/tree/master/matterjs/collisionthings" class="btn">Source</a>
+                          <a href="matterjs/collisionthings/index.html" class="btn">Preview</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-sm">
+                <div class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                    <div class="card p-0"> <!-- p-0 = padding: 0 -->
+                      <img src="https://vonneumannscientia.pythonanywhere.com/media/comment_img/2a1e50965211a88da86b4c850a9b27f1.gif" class="img-fluid rounded-top" alt="Animated Preview"> <!-- rounded-top = rounded corners on the top -->
+                      <!-- Nested content container inside card -->
+                      <div class="content">
+                        <h2 class="content-title">
+                          Inverse Kinematics
+                        </h2>
+                        <p class="text-muted">
+                          Haven't fininshed it yet but finished varient is on CollectiveEnigma
+                          
+                        </p>
+                        <div class="text-right"> <!-- text-right = text-align: right -->
+                          <a href="https://github.com/itspacchu/Javascript-projects/tree/master/FABRIK-Solver" class="btn">Source</a>
+                          <a href="https://vonneumannscientia.pythonanywhere.com/post/25/" class="btn">CollectiveEnigma</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <br>
-        <hr>
-        <br>
 
-        <div>
-        <h2><a href="BoidsProject/index.html"> BOIDS!!! <i> in progress lol </a></i> </h2>
-        <iframe src="BoidsProject/index.html" width=740 height=430></iframe>
-        </div>
-        <br>
-        <hr>
-        <br>
-        
+    </div>
+    <!-- Content wrapper end -->
+    <nav class="navbar navbar-fixed-bottom">
+        <span class="navbar-text ml-auto"> <!-- ml-auto = margin-left: auto -->
+            &copy; Prashant Nandipati
+          </span>
+      </nav>
+  </div>
+  <!-- Page wrapper end -->
 
-    </body>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
-    <script type="application/javascript">
-
-        function resizeIFrameToFitContent( iFrame ) {
-        
-            iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
-            iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
-        }
-        
-        window.addEventListener('DOMContentLoaded', function(e) {
-        
-            var iFrame = document.getElementById( 'iFrame1' );
-            resizeIFrameToFitContent( iFrame );
-        
-            // or, to resize all iframes:
-            var iframes = document.querySelectorAll("iframe");
-            for( var i = 0; i < iframes.length; i++) {
-                resizeIFrameToFitContent( iframes[i] );
-            }
-        } );
-        
-        </script>
-        
-        <iframe src="usagelogs/default.aspx" id="iFrame1"></iframe>
-    <footer>
-    </footer>
-    
+  <!-- Halfmoon JS -->
+  <script src="https://cdn.jsdelivr.net/gh/halfmoonui/halfmoon@1.0.3/js/halfmoon.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</body>
 </html>
+
