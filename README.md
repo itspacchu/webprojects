@@ -1,6 +1,6 @@
 # Learning Javascript 🦅
 
-Learning javascript p5.js from TheNatureOfCode and Coding Train ✋
+I'm currently learning javascript p5.js from TheNatureOfCode and Coding Train ✋ wish me luck
  [root](https://itspacchu.github.io/Javascript-projects/)
  
 - **[Double Pendulum](https://itspacchu.github.io/Javascript-projects/DoublePendulum/index.html)**
