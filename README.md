@@ -1,6 +1,5 @@
-# Learning Javascript 🦅
+# Learning Web js/Webasm projects
 
-Learning javascript p5.js from TheNatureOfCode and Coding Train ✋
  [root](https://itspacchu.github.io/Javascript-projects/)
  
 - **[Double Pendulum](https://itspacchu.github.io/Javascript-projects/DoublePendulum/index.html)**
